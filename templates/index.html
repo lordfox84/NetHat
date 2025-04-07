@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speedtest Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" class="stylesheet">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Speedtest Dashboard</h1>
+    <div class="result">
+      <p>Download: <span id="download">-</span> <span id="dl-spinner"></span></p>
+      <p>Upload: <span id="upload">-</span> <span id="ul-spinner"></span></p>
+      <p>Ping: <span id="ping">-</span> <span id="ping-spinner"></span></p>
+    </div>
+    <button onclick="fetchSpeed()">Test Speed</button>
+  </div>  
+
+  <div class="container">
+    <h1>Connected Devices</h1>
+    <button onclick="fetchDevices()">Show Devices</button>
+    <pre id="devices" class="devices"></pre>
+  </div>
+
+</body>
+</html>
